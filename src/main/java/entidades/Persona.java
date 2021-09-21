@@ -19,6 +19,7 @@ import javax.persistence.Table;
 import org.hibernate.envers.Audited;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -31,6 +32,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Audited
+@Builder
 public class Persona extends Base {
 	
 	
@@ -46,6 +48,7 @@ public class Persona extends Base {
 	private Domicilio domicilio;
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@Builder.Default
 	@JoinTable(
 			name= "persona_libro", 
 			joinColumns = @JoinColumn(name = "persona_id"),

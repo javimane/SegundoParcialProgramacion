@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import org.hibernate.envers.Audited;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,6 +20,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Audited
+@Builder
 public class Domicilio extends Base {
 	
 	@Column(name="calle")
